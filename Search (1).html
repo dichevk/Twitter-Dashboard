@@ -1,0 +1,73 @@
+<html>
+<head>
+
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">
+<script src="table.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="searchbar">
+  <input type="search" class="search_1"  placeholder="Search..">
+<button type="submit" class="submit_1" value="search">&nbsp;</button>
+</div>
+
+<div class="menu"> 
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Choose Language</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#NL">NL</a>
+    <a href="#BG">BG</a>
+    <a href="#EN">EN</a>
+  </div>
+</div>
+</div> 
+
+
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+<div class="pr">
+
+
+
+  </div>
+</div>
+</form>
+  <div class ="graph">
+
+
+  </div>
+
+  <script>
+
+events.connect('chirp', '#pr');
+block('#pr').tweets({memory:20});
+</script>
+
+
+</body>
+</html>	
