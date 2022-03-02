@@ -1,0 +1,144 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="/style/layout.css"/>
+<link rel="stylesheet" href="/style/theme.css"/>
+<script src="/lib/jquery-2.1.1.min.js"></script>
+<script src="/lib/jquery.flot.min.js"></script>
+<script src="/lib/core.js"></script>
+<script src="/lib/log.js"></script>
+<script src="/lib/form.js"></script>
+<script src="/lib/tweets.js"></script>
+<script src="/lib/charts.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel = "stylesheet" type = "text/css" href = "stylesheet.css" />
+<script src="table.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="searchbar">
+ <input type="search" class="search_1" id="myInput"  placeholder="Search..">
+<!--<button type="submit" class="submit_1" value="search">&nbsp;</button>-->
+</div>
+
+<div class="menu"> 
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Choose Language</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#BG">BG</a>
+    <a href="#EN">EN</a>
+  </div>
+</div>
+</div> 
+
+<div class="text_box" id="pr">
+
+
+  </div>
+  <br>
+  <div style="border-style: solid; height: 50px; width: 50px; border-color: white;" id="counttweet" >
+    <p style = "font-size: 15; color: white;">
+      <script>
+      document.getElementById("#counttweets").innerHTML = "KUR";
+    </script>
+
+   <script type="text/javascript"><!--
+//function ReplaceContentInContainer("#counttweet",count) {
+//var container = document.getElementById("#counttweet");
+//container.innerHTML = count;
+//}
+//--></script>
+
+
+
+</div>
+</form>
+  <div class ="graph" id="graph">
+
+  </div>
+  <script>
+
+  block('#pr').tweets({memory:10});
+events.connect('chirp', '#pr');
+
+</script>
+<script>
+  block('#graph').rolling_chart({
+    memory: 75,
+    series: {
+        'sensor0': {},
+        'sensor1': {}
+    },
+    chart: {
+        yaxis:{
+            min: -100,
+            max: 100
+        },
+        xaxis: {
+            show: false
+        }
+    }
+});
+  events.connect('gr','#graph');
+</script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#pr *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+</body>
+</html>	

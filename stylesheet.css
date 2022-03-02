@@ -1,9 +1,9 @@
 body {
   margin: 20px;
-  background-image: url("red.png");
+  background-image: url("Pic_2.jpeg");
   background-repeat: no-repeat; 
-  background-size: 50%;
-  background-position: right top; 
+  background-size: 130%;
+  background-position: center; 
   background-attachment: fixed;
     
  
@@ -13,23 +13,28 @@ body {
 .text_box{
 margin-top: 20px;
 margin-left: 10px;
+align: center;
   border-style: solid;
- width: 800px;
-  height: 300px;
+ width: 1800px;
+  height: 390px;
+background-color: rgba(255, 255, 255, 0.5);
 }
 
-#graph{
+.graph{
 margin-top: 40px;
 margin-left: 10px;
+align: center;
   border-style: solid;
- width: 800px;
-  height: 300px;
+ width: 1800px;
+  height: 380px;
+background-color: rgba(255, 255, 255, 0.5) ;
+
 }
 
 
 
 .dropbtn {
-  background-color: #d22528;
+  background-color: #E23EAB;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -39,7 +44,7 @@ margin-left: 10px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #d22528;
+  background-color: #ff6ec7;
 }
 
 .dropdown {
@@ -70,8 +75,9 @@ margin-left: 10px;
 
 .menu{
 margin-top: -50px;
-margin-left:700px;
+margin-left:1650px;
 overflow: auto;
+position: absolute;
 
 }
 
@@ -79,7 +85,7 @@ overflow: auto;
 overflow: auto;
 background-color: #fffbf8;
 padding:13px;
-width:335px;
+width:1600px;
 -webkit-box-sizing:border-box;
 -moz-box-sizing:border-box;
 box-sizing:border-box;
@@ -101,7 +107,7 @@ box-shadow:
 0 2px 4px 2px rgba(255, 255, 255, 0.83) inset;
 }
 .search_1{
-width:250px;
+width:1500px;
 height:30px;
 padding-left:15px;
 border-radius:6px;
@@ -146,9 +152,4 @@ cursor:pointer;
 
 .search_1:focus{
 outline:0;
-}
-#pr{
-  height:250px;
-  width:300px;
-  border-style: solid;
 }
